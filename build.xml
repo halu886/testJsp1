@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="testJSP1" default="create-class" basedir=".">
+
+	<property name="src" value="src"/>
+	<!-- <property name="servlet-api" value="\D:\Program Files\tomcat\apache-tomcat-7.0.82\lib\c"/> -->
+	<property name="lib" value="lib/servlet-api.jar"/>  
+	<property name="dest" value="classes"/>
+	<!-- <property name="np_jar" value="build/lib/test.jar"/> -->
+
+	<target name="create-path">
+		<mkdir dir="${dest}"/>
+		<mkdir dir="${lib}"/>
+	</target>
+
+	<target name="create-class">
+		<javac srcdir="${src}" destdir="${dest}" classpath="${lib}"/>
+	</target>
+
+	<target name="clean">
+		<!-- <delete file="${np_jar}"/> -->
+		<delete dir="${dest}"/>
+		<!-- <delete dir="${lib}"/> -->
+	</target>
+</project>
